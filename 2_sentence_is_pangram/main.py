@@ -10,3 +10,13 @@ pytest ./2_sentence_is_pangram/test.py
 
 def is_sentence_is_pangram(sentence: str) -> bool:
     """Пишите ваш код здесь."""
+    array_english_symbols = "abcdefghijklmnopqrstuvwxyz"
+    panograma = True
+
+    for char in array_english_symbols:
+        if sentence.lower().find(char) != -1:
+            continue
+        else:
+            panograma = False
+            break
+    return panograma
