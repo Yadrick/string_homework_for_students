@@ -16,5 +16,4 @@ def is_array_string_are_equal(array_string_1: list[str], array_string_2: list[st
     """Пишите ваш код здесь."""
     if ("".join(array_string_1).lower() == "".join(array_string_2).lower()):
         return True
-    else:
-        return False
+    return False
