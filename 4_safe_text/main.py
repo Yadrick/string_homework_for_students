@@ -48,4 +48,12 @@ def recover_article() -> str:
     wrong_article = get_wrong_article()
 
     # Ваш код ниже, возвращайте уже отредактированный текст!
-    return wrong_article
+    separate_sentences = wrong_article.lower().replace("!", "").split(SPLIT_SYMBOL)
+    correct_article = ""
+
+    for separate in separate_sentences:
+        if len(separate) != 0:
+            correct_article += ("".join(reversed(separate)
+                                        ).replace("woof-woof", "cat")).capitalize() + ".\n"
+
+    return correct_article
