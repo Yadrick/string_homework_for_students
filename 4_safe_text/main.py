@@ -48,6 +48,7 @@ def recover_article() -> str:
     wrong_article = get_wrong_article()
 
     # Ваш код ниже, возвращайте уже отредактированный текст!
+
     separate_sentences = wrong_article.lower().replace("!", "").split(SPLIT_SYMBOL)
     correct_article = ""
 
