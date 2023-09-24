@@ -8,16 +8,15 @@ pytest ./2_sentence_is_pangram/test.py
 """
 
 
+import string
+
+
 def is_sentence_is_pangram(sentence: str) -> bool:
     """Пишите ваш код здесь."""
 
-    array_english_symbols = "abcdefghijklmnopqrstuvwxyz"
-    panograma = True
+    char_array = set()
+    english_alphabet = set()
+    english_alphabet.update(string.ascii_letters.lower())
+    char_array.update(sentence.lower())
 
-    for char in array_english_symbols:
-        if sentence.lower().find(char) != -1:
-            continue
-        else:
-            panograma = False
-            break
-    return panograma
+    return english_alphabet.issubset(char_array)

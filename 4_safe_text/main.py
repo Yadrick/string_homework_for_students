@@ -49,12 +49,13 @@ def recover_article() -> str:
 
     # Ваш код ниже, возвращайте уже отредактированный текст!
 
-    separate_sentences = wrong_article.lower().replace("!", "").split(SPLIT_SYMBOL)
+    separate_sentences = wrong_article.lower().split(SPLIT_SYMBOL)
     correct_article = ""
 
-    for separate in separate_sentences:
-        if len(separate) != 0:
-            correct_article += ("".join(reversed(separate)
-                                        ).replace("woof-woof", "cat")).capitalize() + ".\n"
+    for sentence in separate_sentences:
+        half_len_separate = int(len(sentence)/2)
+        if half_len_separate:
+            correct_article += (sentence[:half_len_separate][::-1].replace("woof-woof",
+                                                                           "cat")).capitalize() + ".\n"
 
     return correct_article
