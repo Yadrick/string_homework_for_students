@@ -14,9 +14,7 @@ import string
 def is_sentence_is_pangram(sentence: str) -> bool:
     """Пишите ваш код здесь."""
 
-    char_array = set()
-    english_alphabet = set()
-    english_alphabet.update(string.ascii_letters.lower())
-    char_array.update(sentence.lower())
+    char_array = set(sentence.lower())
+    english_alphabet = set(string.ascii_letters.lower())
 
     return english_alphabet.issubset(char_array)

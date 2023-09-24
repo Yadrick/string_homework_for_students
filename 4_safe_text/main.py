@@ -55,7 +55,8 @@ def recover_article() -> str:
     for sentence in separate_sentences:
         half_len_separate = int(len(sentence)/2)
         if half_len_separate:
-            correct_article += (sentence[:half_len_separate][::-1].replace("woof-woof",
-                                                                           "cat")).capitalize() + ".\n"
+            correct_article += sentence[:half_len_separate][::-1].replace(
+                                   "woof-woof", "cat"
+                               ).capitalize() + SPLIT_SYMBOL
 
     return correct_article
